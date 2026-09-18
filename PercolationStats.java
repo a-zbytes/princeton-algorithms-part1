@@ -53,7 +53,7 @@ public class PercolationStats {
 
     public static void main(String[] args) {
         if (args.length < 2) {
-            return;
+            throw new IllegalArgumentException("Invalid number of arguments, use 2 arguments");
         }
 
         int n = toInt(args[0], "n");
@@ -75,7 +75,8 @@ public class PercolationStats {
             return value;
         }
         catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Invalid " + type + " provided, Enter valid number");
+            throw new IllegalArgumentException("Invalid " + type + " provided, Enter valid number",
+                                               e);
         }
     }
 }
