@@ -1,0 +1,2 @@
+#!/bin/zsh
+java -cp .lift/algs4.jar:. "$@"
