@@ -20,7 +20,6 @@ public class Permutation {
 
             if (count <= k) {
                 randomizedQueue.enqueue(text);
-                count++;
             }
             else {
                 if (StdRandom.bernoulli((double) k / count)) {
