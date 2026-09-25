@@ -132,4 +132,8 @@ public class Deque<Item> implements Iterable<Item> {
             throw new UnsupportedOperationException();
         }
     }
+
+    public static void main(String[] args) {
+
+    }
 }
