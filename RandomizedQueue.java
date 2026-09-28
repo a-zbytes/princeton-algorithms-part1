@@ -22,6 +22,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         return size == 0;
     }
 
+    public int size() {
+        return size;
+    }
+
     public void enqueue(Item item) {
         if (item == null) {
             throw new IllegalArgumentException();
@@ -54,7 +58,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         return items[i];
     }
 
-    public void resize(int newSize) {
+    private void resize(int newSize) {
         Item[] copy = (Item[]) new Object[newSize];
 
         for (int i = 0; i < size; i++) {
