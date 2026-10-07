@@ -36,7 +36,7 @@ public class FastCollinearPoints {
     }
 
     public LineSegment[] segments() {
-        return segments;
+        return segments.clone();
     }
 
     private void findSegments() {
@@ -55,7 +55,8 @@ public class FastCollinearPoints {
             Point largest = points[i].compareTo(copy[1]) >= 0 ? points[i] : copy[1];
 
             int count = 1;
-            for (int j = 1; j < length; j++) {
+            for (int j = 2; j < length;
+                 j++) { // can start at 2 since i processed copy[1] and points[i] have been processed
                 double currentSlope = points[i].slopeTo(copy[j]);
                 double previousSlope = points[i].slopeTo(copy[j - 1]);
 

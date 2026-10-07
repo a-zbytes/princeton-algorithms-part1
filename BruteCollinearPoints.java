@@ -36,7 +36,7 @@ public class BruteCollinearPoints {
     }
 
     public LineSegment[] segments() {
-        return segments;
+        return segments.clone();
     }
 
     private void findSegments() {
