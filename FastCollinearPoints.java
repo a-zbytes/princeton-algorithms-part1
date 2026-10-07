@@ -51,12 +51,15 @@ public class FastCollinearPoints {
             Point[] copy = points.clone();
             Arrays.sort(copy, points[i].slopeOrder());
 
-            Point smallest = copy[1];
-            Point largest = copy[1];
+            Point smallest = points[i].compareTo(copy[1]) <= 0 ? points[i] : copy[1];
+            Point largest = points[i].compareTo(copy[1]) >= 0 ? points[i] : copy[1];
 
             int count = 1;
             for (int j = 1; j < length; j++) {
-                if (points[i].slopeTo(copy[j]) == points[i].slopeTo(copy[j - 1])) {
+                double currentSlope = points[i].slopeTo(copy[j]);
+                double previousSlope = points[i].slopeTo(copy[j - 1]);
+
+                if (currentSlope == previousSlope) {
                     count++;
                     if (copy[j].compareTo(smallest) < 0) {
                         smallest = copy[j];
@@ -73,8 +76,8 @@ public class FastCollinearPoints {
                         }
                     }
                     count = 1;
-                    smallest = copy[j];
-                    largest = copy[j];
+                    smallest = points[i].compareTo(copy[j]) <= 0 ? points[i] : copy[j];
+                    largest = points[i].compareTo(copy[j]) >= 0 ? points[i] : copy[j];
                 }
             }
             if (count >= 3) {
