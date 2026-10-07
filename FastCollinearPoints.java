@@ -58,7 +58,7 @@ public class FastCollinearPoints {
             for (int j = 1; j < length; j++) {
                 if (points[i].slopeTo(copy[j]) == points[i].slopeTo(copy[j - 1])) {
                     count++;
-                    if (copy[j].compareTo(points[i]) < 0) {
+                    if (copy[j].compareTo(smallest) < 0) {
                         smallest = copy[j];
                     }
 
