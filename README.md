@@ -33,21 +33,34 @@ The repository is organized into core algorithmic implementations and interactiv
 *Note: Third-party binaries such as `algs4.jar` and proprietary course input files are excluded via `.gitignore` to keep
 the repository lightweight.*
 
-## Compilation & Setup
+## Compilation & Execution
 
-These implementations depend on Princeton's standard library (`algs4.jar`).
+This project uses Princeton's standard library (`algs4.jar`), located in the `.lift/` directory.
+
+For convenience, two shell scripts are provided:
+
+- **`jc`** — Compiles Java source files using the Princeton library.
+- **`jr`** — Runs compiled Java classes using the same library.
+
+### Usage
+
+Compile a Java source file:
+
+```bash
+jc Percolation.java
+```
+
+Run the compiled class:
+
+```bash
+jr Percolation
+```
+
+Both commands automatically include `.lift/algs4.jar` and the current directory in the Java classpath.
+
+### Setup
 
 1. Download `algs4.jar` from the [Princeton Algorithms website](https://algs4.cs.princeton.edu/code/).
-2. Compile with the library on your classpath:
+2. Place the library inside the `.lift/` directory at the repository root.
+3. Make sure the `jc` and `jr` scripts are executable and accessible from your terminal.
 
-   ```bash
-   javac -cp .:algs4.jar Percolation.java
-   ```
-
-3. Run the compiled program:
-
-   ```bash
-   java -cp .:algs4.jar Percolation
-   ```
-
-For more information about the course, visit [Princeton Algorithms, Part I](https://algs4.cs.princeton.edu/home/).
