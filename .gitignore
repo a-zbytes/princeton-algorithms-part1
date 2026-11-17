@@ -1,2 +1,16 @@
+#IDE & Build folders
 .idea/
+.lift/
+*.iml
+out/
+target/
+
+# Compiled Java binaries
+*.class
+
+# macOS system files
+.DS_Store
+
+# Course text/data test files
+*.txt
 *.zip
